@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use app\Task;
+use App\Task;
 use Illuminate\Http\Request;
 
 class TasksController extends Controller
@@ -12,8 +12,13 @@ class TasksController extends Controller
             return Task::all();
     }
 
-    public function store(){
+    public function store(Request $request){
 
-        return "Ok";
+        $task = Task::create([
+            'nome' => $request->input('nome'),
+            'complete' => $request->input('complete')
+        ]);
+
+        return $request;
     }
 }
