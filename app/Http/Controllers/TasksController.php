@@ -21,4 +21,10 @@ class TasksController extends Controller
 
         return $request;
     }
+
+    public function show (Task $task){
+
+        return $task;
+
+    }
 }
